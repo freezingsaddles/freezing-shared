@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freezing-shared"
+version = "0.0.1"
+description = "shared classes for Freezing Saddles"
+readme = "README.md"
+authors = [
+    {name = "Hans Lellelid", email = "$hans@xmpl.org"},
+    {name = "Merlin Hughes", email = "merlin@merlin.org"},
+    {name = "Richard Bullington-McGuire", email = "richard.bullington.mcguire@gmail.com"},
+]
+maintainers = [
+    {name = "Richard Bullington-McGuire", email="richard.bullington.mcguire@gmail.com"},
+]
+license = {text = "Apache License (2.0)"}
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Games",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Natural Language :: English",
+]
+dependencies = [
+    "freezing-model @ https://github.com/freezingsaddles/freezing-model/archive/0.10.4.tar.gz",
+    "stravalib==1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "fawltydeps",
+    "flake8",
+    "flake8-bugbear",
+    "flake8-builtins",
+    "flake8-comprehensions",
+    "flake8-docstrings",
+    "flake8-eradicate",
+    "flake8-print",
+    "flake8-pyproject",
+    "flake8-raise",
+    "flake8-return",
+    "flake8-simplify",
+    "flake8-sorted-keys",
+    "flake8-todo",
+    "isort",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+# Thanks https://www.reddit.com/r/learnpython/comments/rr6y69/comment/hqeqt68/?utm_source=share&utm_medium=web2x&context=3
+ignore = [
+    "E203",
+    "E501",
+    "W503",
+    "W503",
+]
+max-line-length = 88
+max-complexity = 39
+extend-ignore = "E203"
+inline-quotes = "double"

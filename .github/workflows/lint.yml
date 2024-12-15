@@ -1,0 +1,30 @@
+---
+name: Lint
+
+on: pull_request
+
+jobs:
+
+  # Thanks to:
+  # https://black.readthedocs.io/en/stable/integrations/github_actions.html
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: black Lint
+        uses: psf/black@24.1.1
+      - name: isort Lint
+        uses: isort/isort-action@v1
+        with:
+          requirements-files: "requirements.txt requirements-test.txt"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          plugins: "flake8-bugbear flake8-builtins flake8-comprehensions flake8-docstrings flake8-eradicate flake8-print flake8-pyproject flake8-quotes flake8-raise flake8-return flake8-simplify flake8-sorted-keys flake8-todo"
+      - name: fawltydeps Lint
+        uses: tweag/FawltyDeps-action@v0.2.0

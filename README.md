@@ -22,6 +22,18 @@ This project uses [setuptools](https://setuptools.readthedocs.io/en/latest/) for
     source .venv/bin/activate
     pip install -e '.[lint]'  # install with linters for development
 
+### Cloning all the Freezing Saddles repositories
+If you are working with multiple Freezing Saddles repositories, you can clone them all with the following script:
+
+```
+# Clone all the freezingsaddles repositories
+mkdir -p freezingsaddles
+cd freezingsaddles
+for part in beanstalkd compose infra model nq sync shared teams web; do
+  [ -d freezing-$part ] || git clone https://github.com/freezingsaddles/freezing-$part.git
+done
+```
+
 ### Linting
 This project uses [flake8](http://flake8.pycqa.org/en/latest/) for linting. To run the linter:
 

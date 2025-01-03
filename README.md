@@ -12,7 +12,7 @@ including [freezing-web](https://github.com/freezingsaddles/freezing-web) and [f
 
 
 ### Coding standards
-The `freezing-sync` code is intended to be [PEP-8](https://www.python.org/dev/peps/pep-0008/) compliant. Code formatting is done with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/) and can be linted with [flake8](http://flake8.pycqa.org/en/latest/). See the [.flake8](.flake8) file and install the `dev` dependencies to get these tools (`pip install -e '.[dev]''`).
+The `freezing-sync` code is intended to be [PEP-8](https://www.python.org/dev/peps/pep-0008/) compliant. Code formatting is done with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/) and can be linted with [flake8](http://flake8.pycqa.org/en/latest/). See the [pyproject.toml](pyproject.tml) file and install the `dev` dependencies to get these tools (`pip install -e '.[dev]''`).
 
 Developing
 ----------

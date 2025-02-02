@@ -40,7 +40,7 @@ This project uses isort for sorting imports. To sort the imports:
 
 This software is a community-driven effort, and as such the contributions are owned by the individual contributors:
 
-Copyright 2019 Hans Lillelid <br>
+Copyright 2019 Hans Lellelid <br>
 Copyright 2020 Merlin Hughes <br>
 Copyright 2020 Richard Bullington-McGuire <br>
 

@@ -12,15 +12,27 @@ including [freezing-web](https://github.com/freezingsaddles/freezing-web) and [f
 
 
 ### Coding standards
-The `freezing-sync` code is intended to be [PEP-8](https://www.python.org/dev/peps/pep-0008/) compliant. Code formatting is done with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/) and can be linted with [flake8](http://flake8.pycqa.org/en/latest/). See the [.flake8](.flake8) file and install the `dev` dependencies to get these tools (`pip install -e '.[dev]''`).
+The `freezing-sync` code is intended to be [PEP-8](https://www.python.org/dev/peps/pep-0008/) compliant. Code formatting is done with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/) and can be linted with [flake8](http://flake8.pycqa.org/en/latest/). See the [pyproject.toml](pyproject.tml) file and install the `dev` dependencies to get these tools (`pip install -e '.[dev]''`).
 
 Developing
 ----------
-This project uses [setuptools](https://setuptools.readthedocs.io/en/latest/) for packaging with a modern [pyproject.toml](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html) configuration. To get started, create a virtual environment and install the dependencies:
+This project uses [setuptools](https://setuptools.readthedocs.io/en/latest/) for packaging with a modern [pyproject.toml](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html) configuration. To get started, create a virtual environment and install the dependencies including those for development tools and linters:
 
     python3 -m venv .venv
     source .venv/bin/activate
-    pip install -e '.[lint]'  # install with linters for development
+    pip install -e '.[dev]'
+
+### Cloning all the Freezing Saddles repositories
+If you are working with multiple Freezing Saddles repositories, you can clone them all with the following script:
+
+```
+# Clone all the freezingsaddles repositories
+mkdir -p freezingsaddles
+cd freezingsaddles
+for part in beanstalkd compose infra model nq sync shared teams web; do
+  [ -d freezing-$part ] || git clone https://github.com/freezingsaddles/freezing-$part.git
+done
+```
 
 ### Linting
 This project uses [flake8](http://flake8.pycqa.org/en/latest/) for linting. To run the linter:

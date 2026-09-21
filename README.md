@@ -1,3 +1,5 @@
+> **Moved to [freezingsaddles/freezing](https://github.com/freezingsaddles/freezing).** This code is now [`packages/common`](https://github.com/freezingsaddles/freezing/tree/main/packages/common) there. Issues here are left as a record.
+
 # freezing-shared
 Shared classes for Freezing Saddles
 ==============================================
